@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="basicstruts2" extends="struts-default">
+
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+
+        <action name="listEmail"
+				class="listEmailAction"
+				method="execute">
+			<result name="success">/History.jsp</result>
+		</action>
+
+        <action name="saveEmail"
+                class="emailerAction"
+                method="execute">
+            <result name="success">/EmailSent.jsp</result>
+        </action>
+
+        <action name="showAddressEmails"
+                class="listEmailAction"
+                method="showSelectedEmails">
+            <result name="success">/AddressEmails.jsp</result>
+        </action>
+
+	</package>
+
+</struts>
